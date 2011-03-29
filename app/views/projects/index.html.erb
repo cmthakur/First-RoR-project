@@ -1,0 +1,15 @@
+<h1> Project Listings </h1>
+<ul>
+<% @projects.each do |p| %>
+    <li>
+    <%= p.name.to_s.upcase %>
+    </li>
+    <% p.task_groups.each do |tgroup| %>
+    <ul>
+    <li>
+      <%= tgroup.name %>
+    </li>
+    <% end %>
+</ul>
+<% end %>
+</ul>
