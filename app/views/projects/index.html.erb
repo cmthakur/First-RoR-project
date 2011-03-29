@@ -3,11 +3,13 @@
 <% @projects.each do |p| %>
     <li>
     <%= p.name.to_s.upcase %>
+    <%= link_to "Create task group" , new_project_task_group_path(p)  %>
     </li>
-    <% p.task_groups.each do |tgroup| %>
+    <% p.task_groups.each do |tg| %>
     <ul>
     <li>
-      <%= tgroup.name %>
+      <%= tg.name %>
+       <%= link_to "Create a task"  , new_project_task_group_task_path(p,tg)  %>
     </li>
     <% end %>
 </ul>

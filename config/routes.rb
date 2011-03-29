@@ -1,11 +1,16 @@
 Pms::Application.routes.draw do
 
+  devise_for :users
+
 resources :task_groups
   resources :projects do
     resources :task_groups do
       resources :tasks
     end
   end
+
+  root :to => "projects#index"
+
 
 
   # The priority is based upon order of creation:
