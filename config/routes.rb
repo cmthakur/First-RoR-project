@@ -1,6 +1,13 @@
 Pms::Application.routes.draw do
 
+  get "members/new"
+
+  get "members/show"
+
+  get "members/create"
+
   devise_for :users
+  resources :members
 
 resources :task_groups
   resources :projects do

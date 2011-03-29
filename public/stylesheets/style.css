@@ -1,0 +1,12 @@
+header a{
+    font-size: 40px;
+    font-family: Verdana;
+    font-weight: bold;
+    text-decoration: none;
+    color: #c0c0c0;
+}
+
+nav{
+    float:right;
+    color:#cdcdcd;
+}
