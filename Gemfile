@@ -24,6 +24,12 @@ gem 'devise'
    gem 'launchy'
    gem 'database_cleaner'
    gem 'shoulda-matchers', :git => 'git://github.com/thoughtbot/shoulda-matchers.git'
+
+ end
+ group :test do
+   gem 'cucumber-rails'
+   gem 'machinist','>=2.0.0.beta1'
+   gem 'ffaker'
  end
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)

@@ -1,13 +1,14 @@
 Pms::Application.routes.draw do
 
-  get "members/new"
+  get "home/index"
 
-  get "members/show"
-
-  get "members/create"
+ # get "comments/new"
+ # get "comments/create"
 
   devise_for :users
-  resources :members
+  resources :users do
+    resources :comments
+  end
 
 resources :task_groups
   resources :projects do
@@ -16,7 +17,7 @@ resources :task_groups
     end
   end
 
-  root :to => "projects#index"
+  root :to => "home#index"
 
 
 
