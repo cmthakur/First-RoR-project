@@ -1,0 +1,10 @@
+<h1> Users logs </h1>
+<ul>
+<% @user.comments.each do |c| %>
+<li>
+  <%= c.message %>
+  <%= c.hours %>
+</li>
+<% end %>
+</ul>
+ <%= link_to "Back" , projects_path  %>

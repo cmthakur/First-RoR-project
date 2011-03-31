@@ -3,7 +3,7 @@ In order to get new users and have a project
 As a new Users
 I wants to be able to sign up
 
-# @javascript
+@javascript
 Scenario: Register new User
 Given I am on the sign up page
 And I fill in "Name" with "Rupesh"

@@ -1,4 +1,8 @@
 <% semantic_form_for @project do |form| %>
-    <%= form.inputs %>
+    <%= form.inputs :name  %>
+    <%= form.inputs :deadline , :as => :datetime %>
+    <%= form.input :status, :as => :select, :collection => ["Running","Danger", "Completed"] %>
+    <%= form.inputs :client %>
+    <%= form.inputs :description %>
     <%= form.buttons %>
 <% end %>

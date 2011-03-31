@@ -1,5 +1,6 @@
 class Comment < ActiveRecord::Base
 
-validates :comment, :presence => true
-
+  belongs_to :user
+  validates :message, :presence => true
+  validates :hours, :numericality =>true
 end
