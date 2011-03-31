@@ -10,6 +10,9 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+    when /the create project page/
+      projects_path
+
     when /the sign up page/
       new_user_registration_path
 

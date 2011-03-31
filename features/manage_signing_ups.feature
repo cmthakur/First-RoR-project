@@ -21,6 +21,7 @@ Given I am on the login page
 And I fill in "Email" with "r@r.com"
 And I fill in "Password" with "Rupesh"
 And I press "Sign in"
-And I sleep for 2 seconds
+And I sleep for 4 seconds
 Then I should see "Signed in successfully."
+
 

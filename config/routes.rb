@@ -1,7 +1,5 @@
 Pms::Application.routes.draw do
 
-  get "home/index"
-
  # get "comments/new"
  # get "comments/create"
 
@@ -17,7 +15,7 @@ resources :task_groups
     end
   end
 
-  root :to => "home#index"
+  root :to => "projects#index"
 
 
 
