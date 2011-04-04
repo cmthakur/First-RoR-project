@@ -8,19 +8,18 @@
 </head>
 <body>
   <header>
-  <%= link_to "Managing Projects with PMS", projects_path %>
-   </header>
-   <hr/>
+    <%= link_to "Managing Projects with PMS", projects_path %>
+  </header>
+  <hr/>
   <nav>
-  <%= render "devise/shared/logged_in"%>
+    <%= render "devise/shared/logged_in"%>
   </nav>
+  <div id="notice">
+    <%= notice %>
+    <%= alert %>
+  </div>
 
-<div id="notice">
-  <%= notice %>
-  <%= alert %>
-</div>
-
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>

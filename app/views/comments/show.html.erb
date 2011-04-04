@@ -1,0 +1,13 @@
+<h3>COMMENTS HOME</h3>
+<table id= "project_table">
+<% @comments.each do |com|%>
+<% p= User.where(:id => com.user_id) %>
+<th><%= p.first.name %> posted </th>
+<tr>
+  <td> <%= com.message %> </td>
+  <td><%= com.hours %> hours </td>
+  <td><%= com.created_at %> </td>
+</tr>
+<% end %>
+</table>
+<%= link_to "Back", user_comments_path %>

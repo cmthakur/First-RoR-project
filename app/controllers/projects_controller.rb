@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
 
-before_filter :authenticate_user!
+  before_filter :authenticate_user!
 
   def new
     @project = Project.new
@@ -9,7 +9,7 @@ before_filter :authenticate_user!
   def create
     @project = Project.new(params[:project])
     if @project.save
-      redirect_to new_project_task_group_path(@project), :notice => "#{@project.name.upcase} has been initialized"
+      redirect_to new_project_task_group_path(@project), :notice => "Project #{@project.name.upcase} has been initialized"
     else
       render "new"
     end

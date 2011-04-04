@@ -1,7 +1,8 @@
 <% semantic_form_for [@project,@task_group,@task] do |form| %>
-    <h3>Create Task For -> <%=  @project.name %> with TaskGroup -> <%= @task_group.name %></h3>
-    <%= form.inputs :name  %>
-    <%= form.input :assign_to, :as => :check_boxes, :collection =>User.all  %>
-    <%= form.inputs :deadline %>
-     <%= form.buttons %>
+<h3>Create Task For -> <%=  @project.name %> with TaskGroup -> <%= @task_group.name %></h3>
+<%= form.inputs :name  %>
+<%= form.input :assign_to, :as => :select, :collection =>User.all  %>
+<%= form.inputs :deadline %>
+<%= form.input :task_group_id, :as =>:hidden, :value=>@task_group.id  %>
+<%= form.buttons %>
 <% end %>

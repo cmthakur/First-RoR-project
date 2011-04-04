@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-before_filter :authenticate_user!
+  before_filter :authenticate_user!
 
   def new
     @user = User.find(params[:user_id])
@@ -9,17 +9,22 @@ before_filter :authenticate_user!
 
   def create
     @user=User.find(params[:user_id])
-     @comment = Comment.new (params[ :comment ])
-     if @comment.save
-       redirect_to user_comments_path, :notice => "#{@comment.message} has been posted"
-     else
-       render "new"
-     end
+    @comment = Comment.new (params[ :comment ])
+    if @comment.save
+      redirect_to user_comments_path, :notice => "Message #{@comment.message} has been posted"
+    else
+      render "new"
+    end
   end
 
   def index
     @user = User.find(params[:user_id])
-   @comment=@user.comments.all
+    @comment= @user.comments.order( 'created_at DESC' )
   end
+
+  def show
+    @comments =Comment.all
+  end
+
 
 end

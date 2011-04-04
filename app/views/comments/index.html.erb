@@ -1,10 +1,15 @@
-<h1> Users logs </h1>
-<ul>
+<h1> <%= @user.name %> logs </h1>
+<table id= "project_table">
 <% @user.comments.each do |c| %>
-<li>
+<th>
   <%= c.message %>
-  <%= c.hours %>
-</li>
+</th>
+<tr>
+  <td>Posted by <b><%= @user.name %></b> </td>
+  <td><%= c.hours %> Hours</td>
+  <td>Posted at <%= c.created_at %> </td>
+</tr>
 <% end %>
-</ul>
- <%= link_to "Back" , projects_path  %>
+</table>
+<%= link_to "Back" , projects_path  %>
+<%= link_to "Comment Log", user_comment_path(@user,@comment) %>

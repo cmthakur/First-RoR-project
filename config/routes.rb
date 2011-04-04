@@ -1,8 +1,5 @@
 Pms::Application.routes.draw do
 
- # get "comments/new"
- # get "comments/create"
-
   devise_for :users
   resources :users do
     resources :comments

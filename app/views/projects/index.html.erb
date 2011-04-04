@@ -14,6 +14,11 @@
       <% tg.tasks.each do |t| %>
       <ol><li>
         <%= t.name %>
+        <% p= User.where(:id => t.assign_to) %>
+         -> <%= p.first.name %></br>
+         : Deadline  -> <%= t.deadline %>
+        <% from_time = Time.now %>
+        <b> <%= distance_of_time_in_words(from_time, t.deadline, include_seconds = true) %> </b>
       </li></ol>
       <% end %>
     </td>

@@ -1,5 +1,6 @@
 <% semantic_form_for [@project,@task_group] do |form| %>
-     <h3>Create Task For -> <%=  @project.name %></h3>
-    <%= form.inputs :name  %>
-     <%= form.buttons %>
+<h3>Create Task For -> <%=  @project.name %></h3>
+<%= form.inputs :name  %>
+<%= form.input :project_id, :as =>:hidden, :value=>@project.id  %>
+<%= form.buttons %>
 <% end %>

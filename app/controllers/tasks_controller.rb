@@ -1,22 +1,24 @@
 class TasksController < ApplicationController
 
-before_filter :authenticate_user!
+  before_filter :authenticate_user!
 
-def new
+  def new
     @project=Project.find(params[:project_id])
     @task_group = TaskGroup.find(params[:task_group_id])
     @task=Task.new
   end
 
   def create
+    @user= current_user
     @project=Project.find(params[:project_id])
-      @task_group = TaskGroup.find(params[:task_group_id])
-     @task = Task.new(params[:task])
-     if @task.save
-       redirect_to projects_path, :notice => "#{@task.name} has been initialized"
-     else
-       render "new"
-     end
+    @task_group = TaskGroup.find(params[:task_group_id])
+    @task = Task.new(params[:task])
+    if @task.save
+      UserMailer.welcome(@user,@task).deliver
+      redirect_to projects_path, :notice => "Task #{@task.name} has been initialized.#{@user.name} check your mail for details!!"
+    else
+      render "new"
+    end
   end
 
   def edit
